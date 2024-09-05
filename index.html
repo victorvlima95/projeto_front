@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link para o Bootstrap -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link para o arquivo CSS -->
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar"></div>
+    </div>
+
+    <!-- Container principal do formulário de login -->
+    <div class="login-container">
+        <!-- Cabeçalho da página de login -->
+        <h2>Login - Market</h2>
+
+        <!-- Formulário para entrada de dados do usuário -->
+        <form id="loginForm">
+            <!-- Campo para o email do usuário -->
+            <div>
+                <label for="username">Usuário:</label>
+                <input type="email" id="username" name="username" placeholder="Digite seu e-mail cadastrado" required>
+            </div>
+            <!-- Campo para a senha do usuário -->
+
+            <br>
+
+            <div>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+            </div>
+
+            <br>
+
+            <!-- Botão para submeter o formulário -->
+            <button type="submit">Entrar</button>
+            <!-- Div para exibir mensagens de erro, inicialmente oculta -->
+            <div id="error-message" style="color:red; display:none;">Credenciais inválidas. Tente novamente.</div>
+        </form>
+    </div>
+
+    <!-- Script JavaScript para manipulação do formulário -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Impede o comportamento padrão de envio do formulário
+
+            const url = 'https://reqres.in/api/login'; // URL da API de teste
+            const email = document.getElementById('username').value; // Obtém o valor do campo de email
+            const password = document.getElementById('password').value; // Obtém o valor do campo de senha
+
+            // Dados a serem enviados para a API
+            const data = {
+                email: email,
+                password: password
+            };
+
+            // Faz a requisição para a API
+            //  email: 'eve.holt@reqres.in' - password: 'cityslicka'
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Login failed'); // Lança um erro se a resposta não for OK
+                    }
+                    return response.json(); // Retorna o JSON da resposta
+                })
+                .then(data => {
+                    console.log('Success:', data); // Log de sucesso
+                    sessionStorage.setItem('authToken', data.token); // Armazena o token na sessão
+                    window.location.href = 'main.html'; // Redireciona para a tela principal
+                })
+                .catch((error) => {
+                    console.error('Error:', error); // Log de erro
+                    document.getElementById('error-message').style.display = 'block'; // Exibe a mensagem de erro
+                });
+        });
+    </script>
+    <!-- Scripts do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

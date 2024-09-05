@@ -1,0 +1,190 @@
+/* Define a fonte padrão e a cor de fundo para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para a barra de navegação */
+.navbar {
+    background-color: #333;
+    /* Cor de fundo da navbar */
+    color: white;
+    /* Cor do texto na navbar */
+}
+
+/* Estilos para a lista de itens na navbar */
+.navbar ul {
+    list-style-type: none;
+    /* Remove os marcadores da lista */
+    margin: 0;
+    /* Remove a margem padrão */
+    padding: 0;
+    /* Remove o preenchimento padrão */
+    display: flex;
+    /* Exibe os itens em linha */
+    justify-content: center;
+    /* Centraliza os itens horizontalmente */
+}
+
+/* Estilos para os itens da lista na navbar */
+.navbar ul li {
+    margin: 0 15px;
+    /* Espaçamento lateral entre os itens */
+}
+
+/* Estilos para os links dentro da navbar */
+.navbar ul li a {
+    color: white;
+    /* Cor do texto do link */
+    text-decoration: none;
+    /* Remove o sublinhado padrão dos links */
+    font-weight: bold;
+    /* Define o texto como negrito */
+}
+
+/* Estilos para o estado hover dos links na navbar */
+.navbar ul li a:hover {
+    text-decoration: underline;
+    /* Adiciona um sublinhado quando o link é hovered */
+}
+
+/* Estilos para o contêiner de login */
+.login-container {
+    background-color: white;
+    /* Cor de fundo do contêiner de login */
+    padding: 40px;
+    /* Preenchimento interno */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Sombra ao redor do contêiner */
+    width: 300px;
+    /* Largura fixa */
+    margin: 50px auto;
+    /* Margem superior e inferior para centralizar */
+    /* Adicionado espaçamento superior e inferior */
+    text-align: center;
+    /* Centraliza o texto dentro do contêiner */
+    position: relative;
+    /* Necessário para o posicionamento absoluto da imagem de fundo */
+}
+
+/* Estilos para a imagem de fundo no contêiner de login */
+.login-container img {
+    width: 100%;
+    /* Largura da imagem é igual à largura do contêiner */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    position: absolute;
+    /* Posiciona a imagem de forma absoluta */
+    top: 0;
+    /* Alinha ao topo do contêiner */
+    left: 0;
+    /* Alinha à esquerda do contêiner */
+    z-index: -1;
+    /* Coloca a imagem atrás do conteúdo do contêiner */
+}
+
+/* Estilos para os cabeçalhos h1 e h2 */
+h1,
+h2 {
+    margin-bottom: 20px;
+    /* Espaço abaixo dos cabeçalhos */
+}
+
+/* Estilos para o contêiner principal e a visualização do produto */
+.main-container,
+.product-view {
+    display: flex;
+    /* Exibe os itens em linha */
+    flex-direction: column;
+    /* Alinha os itens verticalmente */
+    align-items: center;
+    /* Centraliza os itens horizontalmente */
+    padding: 20px;
+    /* Preenchimento interno */
+}
+
+/* Estilos específicos para o cabeçalho h1 */
+h1 {
+    margin-bottom: 20px;
+    /* Espaço abaixo do cabeçalho */
+    text-align: center;
+    /* Centraliza o texto */
+}
+
+/* Estilos para a lista de produtos */
+.products {
+    display: flex;
+    /* Exibe os produtos em linha */
+    flex-wrap: wrap;
+    /* Permite que os produtos quebrem para a linha seguinte se necessário */
+    gap: 20px;
+    /* Espaçamento entre os produtos */
+    justify-content: center;
+    /* Centraliza os produtos horizontalmente */
+}
+
+/* Estilos para cada item de produto */
+.product {
+    background-color: white;
+    /* Cor de fundo do produto */
+    border: 1px solid #ddd;
+    /* Borda ao redor do produto */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    padding: 15px;
+    /* Preenchimento interno */
+    width: 200px;
+    /* Largura fixa do produto */
+    text-align: center;
+    /* Centraliza o texto dentro do produto */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Sombra ao redor do produto */
+}
+
+/* Estilos para o cabeçalho dentro de cada produto */
+.product h2 {
+    font-size: 18px;
+    /* Tamanho da fonte */
+    margin: 0 0 10px;
+    /* Espaçamento inferior */
+}
+
+/* Estilos para os links dentro de cada produto */
+.product a {
+    color: #4CAF50;
+    /* Cor do texto do link */
+    text-decoration: none;
+    /* Remove o sublinhado do link */
+    font-weight: bold;
+    /* Define o texto como negrito */
+}
+
+/* Estilos para o estado hover dos links dentro de cada produto */
+.product a:hover {
+    text-decoration: underline;
+    /* Adiciona um sublinhado quando o link é hovered */
+}
+
+/* Estilos para os rótulos na visualização do produto */
+.product-view label {
+    display: block;
+    /* Exibe o rótulo como um bloco */
+    margin-top: 10px;
+    /* Espaço acima do rótulo */
+}
+
+/* Estilos para os campos de entrada na visualização do produto */
+.product-view input {
+    margin-top: 5px;
+    /* Espaço acima do campo de entrada */
+}
+
+/* Estilos para o botão na visualização do produto */
+.product-view button {
+    margin-top: 10px;
+    /* Espaço acima do botão */
+}

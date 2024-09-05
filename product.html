@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualização do Produto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link para o Bootstrap -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link para o arquivo CSS -->
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="main.html">Market</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="main.html">Home</a>
+                </li>
+            </ul>
+            <a class="btn btn-outline-danger" href="index.html">Sair</a>
+        </div>
+    </nav>
+
+    <!-- Verifica se o usuário está autenticado -->
+    <script>
+        if (!sessionStorage.getItem('authToken')) {
+            window.location.href = 'index.html'; // Redireciona para a tela de login se não estiver autenticado
+        }
+    </script>
+
+    <!-- Container de visualização do produto -->
+    <div class="product-view">
+        <h1>Detalhes do Produto</h1>
+        <p>Descrição detalhada do produto.</p>
+        <label for="quantity">Quantidade:</label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1">
+        <button onclick="buyProduct()">Comprar</button>
+        <div id="message" style="display:none;">Em construção...</div>
+    </div>
+
+    <!-- Script JavaScript para o botão de compra -->
+    <script>
+        function buyProduct() {
+            document.getElementById('message').style.display = 'block'; // Exibe a mensagem de construção
+        }
+    </script>
+
+    <!-- Scripts do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
